@@ -19,6 +19,7 @@ import { HttpHeadersInterceptor } from './interceptors/http-headers-interceptor'
 import { DetailsComponent } from './components/details/details.component';
 import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { InterceptorService } from './loader/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,11 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
       useClass: HttpErrorsInterceptor,
       multi: true,
     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true,
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -4,6 +4,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+  
   {
     path: '',
     component: HomeComponent,
@@ -15,6 +16,9 @@ const routes: Routes = [
   {
     path: 'details/:id',
     component: DetailsComponent,
+  },
+  {
+    path:'**', redirectTo:'/'
   }
 ];
 

@@ -1,3 +1,6 @@
+<div *ngIf="loaderService.isLoading | async" class="loader-container">
+    <mat-progress-bar class="mat-progress-bar" mode="indeterminate" color="warn"></mat-progress-bar>
+</div>
 <div class="search-container">
     <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
         <img  class="logo-app"
